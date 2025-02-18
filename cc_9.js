@@ -51,3 +51,30 @@ const mgr1 = new Manager("John Smith", 201, "IT", 8000, 5);
 console.log(mgr1.getDetails()); 
 console.log(mgr1.calculateBonus()); 
 
+
+// Task 3: Creating a Company Class
+
+// Create Company class
+class Company {
+    constructor(name, employees) {
+        this.name = name; // Assign property name (string) for the company’s name
+        this.employees = []; // Assign array employees to store employee objects
+    }
+
+    // Add method addEmployee(employee) to add an employee to the array
+    addEmployee(employee) {
+        return this.employees.push(employee); 
+    }
+
+    // Add method listEmployees() to log all employees’ details
+    listEmployees() {
+        return this.employees.map(employee => console.log(`${employee.getDetails()}`)); 
+    }
+}
+
+// Test Cases:
+const company = new Company("TechCorp");
+company.addEmployee(emp1);
+company.addEmployee(mgr1);
+company.listEmployees();
+
